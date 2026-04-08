@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Düğün Davetiyemiz - 6 Haziran 2026</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Kaushan+Script&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Global Styles & Box Sizing Fix */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100% !important;
+            position: relative;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Scroll animation helper */
+        .scroll-effect {
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            height: 100dvh; /* Dynamic viewport height fallback for mobile */
+            min-height: -webkit-fill-available; /* iOS Safari fallback */
+            width: 100%;
+            max-width: 100vw;
+            contain: layout; /* Prevents overflow content issues */
+            overflow: hidden; 
+            background-image: linear-gradient(rgba(255,255,255,0.2), rgba(243,237,231,0.5)), url("images/hero-bg.gif");
+            background-position: center center; 
+            background-size: cover;             
+            background-repeat: no-repeat;       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* GIF/PNG positioning - Centered */
+        .gif-triangle {
+            width: 40vw;
+            max-width: 85%;
+            max-height: 80vh;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            object-fit: contain;
+        }
+
+        /* Z-index for specific elements */
+        #FFF { z-index: 20; }
+        #FF  { z-index: 10; }
+        #SF  { z-index: 5; }
+        #SFF { z-index: 15; }
+
+        .click-text {
+            position: absolute;
+            top: calc(50% + 22vw); /* Adjusted for dead-center visuals */
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 4px;
+            color: #ba9ba0;
+            font-size: 1rem;
+            cursor: pointer;
+            z-index: 100;
+            animation: fadeInOut 2s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: none;
+            color: #D4AF37;
+            font-size: 2rem;
+            transition: opacity 1s ease;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        .scroll-indicator.bounce-active {
+            opacity: 1;
+            pointer-events: auto;
+            animation: bounce 4s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-15px); }
+            60% { transform: translateX(-50%) translateY(-8px); }
+        }
+
+        .scroll-indicator.sticky {
+            position: fixed;
+            bottom: 2rem;
+        }
+
+        /* Header / Details Section (formerly .hadder) */
+        .header-section {
+            padding: 2rem;
+            width: 100%;
+            max-width: 100vw;
+            background: url('images/akisbg.png');
+            background-size: cover;
+            background-position: center;
+            display: block;
+            margin: 1rem auto;
+            letter-spacing: 3px;
+        }
+
+        .header-section-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #4A4A4A;
+            position: relative;
+        }
+
+        .header-section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 1rem auto;
+        }
+
+        .header-section-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            text-align: center;
+            color: #888;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .header-section-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-align: center;
+            color: #555;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .tracking-trigger {
+            opacity: 0;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 6rem 2rem;
+            width: 100%;
+            max-width: 100vw;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #4A4A4A;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 1rem auto;
+        }
+
+        .section-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-align: center;
+            color: #888;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Countdown Section */
+        .countdown {
+            background: url('images/background.jpg') no-repeat;
+            background-size: cover;
+            background-position: bottom 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(16px);
+            border: 0px solid rgba(161, 190, 129, 0.3);
+            border-radius: 16px;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(186, 155, 160, 0.2);
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #ba9ba0;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            background: url('images/ciceklibg.jpg');
+            background-size: cover;
+            background-position: center;
+            margin-top: 1rem;
+        }
+
+        .schedule-container {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            transform: translateX(10px);
+        }
+
+        .schedule-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .schedule-icon-img {
+            width: 60px;
+            height: 60px;
+            display: block;
+        }
+
+        .schedule-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .schedule-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #206f0f;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #4A4A4A;
+            letter-spacing: 2px;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        /* Decorative Image Section 2 */
+        .decorative2-image-section {
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .decorative2-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            margin: 0 auto;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: #F5F0F0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            aspect-ratio: 1;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            background: #c4c3ae;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.8));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Location Section */
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .location-info {
+            padding: 2rem;
+        }
+
+        .location-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            letter-spacing: 2px;
+        }
+
+        .location-address {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .location-address i {
+            font-family: 'Cormorant Garamond', serif;
+            color: #D4AF37;
+            font-size: 2rem;
+            margin-top: 0.2rem;
+            letter-spacing: 2px;
+        }
+
+        .address-text {
+            font-family: 'Cormorant Garamond', serif;
+            color: #666;
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* RSVP Section */
+        .rsvp {
+            background: #a7c18f;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .rsvp-form-container {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: #4A4A4A;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .form-input, .form-select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 0px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            font-family: 'Cormorant Garamond', sans-serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: linear-gradient(135deg, #f9f0d0, #a1be81);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(186, 155, 160, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(186, 155, 160, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Arma Image Section */
+        .arma-image-section {
+            background: #a7c18f; /* RSVP ile bütünlük sağlandı */
+            padding: 2rem 1rem 3rem;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .arma-img {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 1rem 1rem;
+            background: #f3f8ef;
+        }
+
+        .footer-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: #bab99b;
+            margin-bottom: 0.2rem;
+            padding: 0 0.2rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-subtext {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            color: #888888;
+            letter-spacing: 2px;
+        }
+
+        /* Tracking Animations */
+        .tracking-in-expand-fwd-bottom {
+            -webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        @-webkit-keyframes focus-in-expand {
+            0% { letter-spacing: -0.5em; -webkit-filter: blur(12px); filter: blur(12px); opacity: 0; }
+            100% { -webkit-filter: blur(0px); filter: blur(0px); opacity: 1; }
+        }
+
+        @keyframes focus-in-expand {
+            0% { letter-spacing: -0.5em; filter: blur(12px); opacity: 0; }
+            100% { filter: blur(0px); opacity: 1; }
+        }
+
+        /* Media Queries (Merged & Optimized) */
+        @media (max-width: 768px) {
+            .gif-triangle {
+                width: 88%;
+                max-height: 70vh;
+            }
+            .click-text {
+                top: calc(50% + 46vw);
+                font-size: 1rem;
+            }
+            .countdown {
+                background-position: center center;
+            }
+            .schedule-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 1rem;
+                margin-top: -10px;
+            }
+            .schedule-container {
+                max-width: 85%;
+                margin: 2rem auto 0;
+                gap: 1.5rem;
+            }
+            .schedule-content {
+                align-items: center;
+            }
+            .schedule-time {
+                margin-top: -30px;
+            }
+            .schedule-title {
+                text-align: center;
+            }
+            .schedule-icon-img {
+                width: 50px;
+                height: 50px;
+            }
+            .schedule-icon {
+                width: 70px;
+                height: 70px;
+                margin: 0 auto 0.1rem;
+            }
+            .decorative2-img {
+                width: 100%;
+                max-width: none;
+                height: auto;
+            }
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+            .location-info {
+                order: 1;
+                text-align: center;
+            }
+            .map-container {
+                order: 2;
+            }
+            .arma-image-section {
+                padding: 1rem;
+            }
+            .arma-img {
+                width: 92%;
+                max-width: none;
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gif-triangle {
+                width: 85%;
+            }
+            .click-text {
+                top: calc(50% + 48vw);
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <img src="images/test.gif" class="gif-triangle" id="FF" alt="Davetiye Animasyonu 1">
+        <img src="images/Comp10.png" class="gif-triangle" id="FFF" style="opacity: 0;" alt="Davetiye Statik 1">
+        <img src="images/Part2.gif" class="gif-triangle" id="SF" style="opacity: 0;" alt="Davetiye Animasyonu 2">
+        <img src="images/Part2.png" class="gif-triangle" id="SFF" style="opacity: 0;" alt="Davetiye Statik 2">
+        <div id="click-hint" class="click-text">TIKLA</div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <section class="header-section">
+        <div class="header-section-content">
+            <h1 class="header-section-title tracking-trigger">Anastasia & Zahit</h1>
+            <p class="header-section-subtitle tracking-trigger">Birlikteliğimizi Kutluyoruz</p>
+            <p class="header-section-date tracking-trigger">6 Haziran 2026 • 18:00</p>
+            <p class="header-section-date tracking-trigger">Dress code</p>
+            <p class="header-section-date tracking-trigger">
+               <img src="images/dresscode.svg" style="width: 40px; height: auto;" loading="lazy" alt="Dress Code">
+            </p>
+        </div>
+    </section>
+    
+    <section class="countdown" id="countdown">
+        <h2 class="section-title">Büyük Güne</h2>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">0</span>
+                <span class="countdown-label">Gün</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">0</span>
+                <span class="countdown-label">Saat</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">0</span>
+                <span class="countdown-label">Dakika</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">0</span>
+                <span class="countdown-label">Saniye</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule" id="schedule">
+       <h2 class="section-title">AKIŞ</h2>
+       <div class="schedule-container">
+          <div class="schedule-item">
+             <div class="schedule-icon">
+                 <img src="images/cocktail-icon.png" alt="Kokteyl" class="schedule-icon-img" loading="lazy">
+             </div>
+             <div class="schedule-content">
+                 <p class="schedule-time">18:00</p>
+                 <p class="schedule-title">KOKTEYL</p>
+             </div>
+          </div>
+
+          <div class="schedule-item">
+              <div class="schedule-icon">
+                 <img src="images/nikah-icon.png" alt="Nikah" class="schedule-icon-img" loading="lazy">
+             </div>
+             <div class="schedule-content">
+                 <p class="schedule-time">19:00</p>
+                 <p class="schedule-title">NİKAH</p>
+             </div>
+          </div>
+
+          <div class="schedule-item">
+               <div class="schedule-icon">
+                  <img src="images/yemek-icon.png" alt="Yemek" class="schedule-icon-img" loading="lazy">
+              </div>
+              <div class="schedule-content">
+                  <p class="schedule-time">20:00</p>
+                  <p class="schedule-title">YEMEK</p>
+              </div>
+         </div>
+       </div>
+    </section>
+    
+    <section class="decorative2-image-section">
+        <img src="images/Part2.png" alt="Zarf Görsel" class="decorative2-img" loading="lazy">
+    </section>
+
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Galeri</h2>
+        <p class="section-subtitle">Özel Anlarımız</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/img1.jpg" alt="Gallery 1" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img2.jpg" alt="Gallery 2" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img3.jpg" alt="Gallery 3" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/img4.jpg" alt="Gallery 4" loading="lazy">
+                <div class="gallery-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location" id="location">
+        <h2 class="section-title">KONUM</h2>
+        <p class="section-subtitle">FGD AGRO</p>
+        <div class="location-content">
+            <div class="location-info">
+                <p class="location-text">
+                    Talep eden misafirlerimiz için merkezi noktalardan organizasyon alanına transfer sağlayacağız.
+                </p>
+                <div class="location-address">
+                    <div class="address-text">
+                        <p> <strong>FGD AGRO</strong> </p>
+                        <p>Şıhmurat Mah. Savatlı Sok. Yüreğir - Adana </p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    title="FGD AGRO Konumu"
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3191.6156378103383!2d35.42294007584185!3d36.875617972225704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDUyJzMyLjIiTiAzNcKwMjUnMzEuOSJF!5e0!3m2!1str!2str!4v1775477442376!5m2!1str!2str" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="rsvp" id="rsvp">
+        <h2 class="section-title">KATILIM</h2>
+        <p class="section-subtitle">LÜTFEN KATILIM DURUMUNUZU BİLDİRİNİZ.</p>
+        <div class="rsvp-form-container">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label class="form-label" for="guestName">Adınız Soyadınız</label>
+                    <input 
+                        type="text" 
+                        id="guestName" 
+                        class="form-input" 
+                        placeholder="Adınızı ve soyadınızı giriniz"
+                        required
+                        data-testid="guest-name-input">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="guestCount">Kaç Kişi Katılacaksınız?</label>
+                    <select 
+                        id="guestCount" 
+                        class="form-select" 
+                        required
+                        data-testid="guest-count-select">
+                        <option value="">Seçiniz</option>
+                        <option value="1">1 Kişi</option>
+                        <option value="2">2 Kişi</option>
+                        <option value="3">3 Kişi</option>
+                    </select>
+                </div>
+                <button 
+                    type="submit" 
+                    class="submit-btn"
+                    data-testid="rsvp-submit-button">
+                    <i class="fab fa-whatsapp"></i> WhatsApp ile Bildir
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <section class="arma-image-section">
+        <img src="images/arma-image.png" alt="Arma Görsel" class="arma-img" loading="lazy">
+    </section>
+   
+    <footer class="footer">
+        <p class="footer-text">&nbsp;</p>
+        <p class="footer-text">SİZLERİ DE ARAMIZDA GÖRMEKTEN MUTLULUK DUYACAĞIZ.</p>
+        <p class="footer-subtext">6 Haziran 2026</p>
+        <p class="footer-subtext">&nbsp;</p>
+        <p class="footer-subtext">&nbsp;</p>
+    </footer>
+
+    <script>
+        let isAnimationDone = false;
+        
+        const gif1 = document.getElementById("FF");
+        const png1 = document.getElementById("FFF");
+        const gif2 = document.getElementById("SF");
+        const png2 = document.getElementById("SFF");
+
+        const gif1Duration = 2000;
+        const gif2Duration = 2500;
+        const appearBeforeEnd = 50;
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+        });
+
+        // Function to show PNG over GIF - Simplified Positioning
+        function showPNGafterGIF(gifEl, pngEl, duration) {
+            const preload = new Image();
+            preload.src = pngEl.src;
+
+            preload.onload = function() {
+                setTimeout(() => {
+                    const rect = gifEl.getBoundingClientRect();
+                    
+                    // Pozisyon CSS'te sabit; JS sadece boyut ve görünürlüğü kontrol eder
+                    pngEl.style.position = "absolute";
+                    pngEl.style.top = "50%";
+                    pngEl.style.left = "50%";
+                    pngEl.style.transform = "translate(-50%, -50%)";
+                    pngEl.style.width = `${rect.width}px`;
+                    pngEl.style.height = "auto";
+                    pngEl.style.opacity = "1";
+                }, duration - appearBeforeEnd);
+
+                setTimeout(() => {
+                    gifEl.style.display = "none";
+                }, duration);
+            };
+        }
+
+        showPNGafterGIF(gif1, png1, gif1Duration);
+
+        png1.addEventListener("click", function() {
+            document.getElementById("click-hint").style.display = "none";
+            png1.style.display = "none";
+
+            const gif2Clone = document.createElement("img");
+            gif2Clone.src = gif2.src;
+            gif2Clone.classList.add("gif-triangle");
+            gif2Clone.style.opacity = "1";
+            document.querySelector(".hero").appendChild(gif2Clone);
+
+            const preload2 = new Image();
+            preload2.src = png2.src;
+
+            preload2.onload = function() {
+                setTimeout(() => {
+                    const rect = gif2Clone.getBoundingClientRect();
+
+                    png2.style.position = "absolute";
+                    png2.style.top = "50%";
+                    png2.style.left = "50%";
+                    png2.style.transform = "translate(-50%, -50%)";
+                    png2.style.width = `${rect.width}px`;
+                    png2.style.height = "auto";
+                    png2.style.opacity = "1";
+
+                    gif2Clone.style.display = "none";
+
+                    // Re-enable scroll once
+                    document.body.style.overflow = "auto";
+                    document.documentElement.style.overflow = "auto";
+
+                    isAnimationDone = true;
+                    
+                    const scrollIndicator = document.querySelector('.scroll-indicator');
+                    if(scrollIndicator) {
+                        scrollIndicator.classList.add('bounce-active');
+                        const heroBottom = document.querySelector('.hero').offsetTop + document.querySelector('.hero').offsetHeight;
+                        if (window.scrollY + window.innerHeight < heroBottom) {
+                            scrollIndicator.classList.add('sticky');
+                            scrollIndicator.style.opacity = "1";
+                        }
+                    }
+                }, gif2Duration - appearBeforeEnd);
+            };
+        });
+
+        // Effect scroll event with guard clause
+        window.addEventListener("scroll", function () {
+            if (!isAnimationDone) return; // Guard clause added
+            
+            const scrollY = window.scrollY;
+            if (scrollY > 150) {
+                png2.classList.add("scroll-effect");
+                png2.style.transform = "translate(-50%, -50%) translateX(600px)";
+                png2.style.opacity = "0";
+            } else {
+                png2.style.transform = "translate(-50%, -50%) translateX(0)";
+                png2.style.opacity = "1";
+            }
+        });
+
+        // Scroll Indicator Events
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+        const targetSection = document.querySelector('.header-section'); // Fixed class reference
+        const hero = document.querySelector('.hero');
+
+        if(scrollIndicator) {
+            scrollIndicator.addEventListener('click', function () {
+                if(!targetSection) return;
+                const targetY = targetSection.getBoundingClientRect().top + window.scrollY;
+                const startY = window.scrollY;
+                const distance = targetY - startY;
+                const duration = 800;
+                let startTime = null;
+
+                function animateScroll(currentTime) {
+                    if (!startTime) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const ease = progress < 0.5
+                        ? 4 * progress * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                    window.scrollTo(0, startY + distance * ease);
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                requestAnimationFrame(animateScroll);
+            });
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!isAnimationDone || !scrollIndicator) return; 
+
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            const scrollY = window.scrollY;
+
+            if (scrollY + window.innerHeight < heroBottom) {
+                scrollIndicator.classList.add('sticky');
+                scrollIndicator.style.opacity = "1"; 
+            } else {
+                scrollIndicator.classList.remove('sticky');
+            }
+        });
+
+        // Intersection Observer for tracking triggers
+        const trackingElements = document.querySelectorAll('.tracking-trigger');
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry, index) => {
+                if(entry.isIntersecting){
+                    setTimeout(() => {
+                        entry.target.classList.add('tracking-in-expand-fwd-bottom');
+                    }, index * 300);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0, rootMargin: "0px 0px -100px 0px" });
+
+        trackingElements.forEach(el => observer.observe(el));
+
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2026-06-06T19:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+            }
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // RSVP Form Submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const guestName = document.getElementById('guestName').value.trim();
+            const guestCount = document.getElementById('guestCount').value;
+            if (!guestName || !guestCount) {
+                alert('Lütfen tüm alanları doldurunuz.');
+                return;
+            }
+            const message = `Merhaba! 6 Haziran 2026 tarihindeki düğününüze katılacağımı bildirmek istiyorum.%0A%0A*İsim:* ${encodeURIComponent(guestName)}%0A*Kişi Sayısı:* ${guestCount} kişi%0A%0AO gün görüşmek üzere! 🎉`;
+            const whatsappURL = `https://wa.me/905348951908?text=${message}`;     
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
