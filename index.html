@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Kaushan+Script&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GIF Preload for faster animation -->
+    <link rel="preload" as="image" href="images/test.gif">
+    <link rel="preload" as="image" href="images/Comp10.png">
+    <link rel="preload" as="image" href="images/Part2.gif">
+    <link rel="preload" as="image" href="images/Part2.png">
 
     <style>
         /* Global Styles & Box Sizing Fix */
@@ -70,6 +75,9 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             object-fit: contain;
+            will-change: opacity, display;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
         /* Z-index for specific elements */
@@ -904,31 +912,40 @@
         document.addEventListener("DOMContentLoaded", function () {
             document.documentElement.style.overflow = "hidden";
             document.body.style.overflow = "hidden";
+            
+            // Ensure GIF is visible and starts animating
+            gif1.style.display = "block";
+            gif1.style.opacity = "1";
         });
 
-        // Function to show PNG over GIF - Simplified Positioning
+        // Function to show PNG over GIF - Optimized with parallel loading
         function showPNGafterGIF(gifEl, pngEl, duration) {
+            // Başla: GIF'i hemen göster
+            gifEl.style.display = "block";
+            gifEl.style.opacity = "1";
+            
+            // PNG'yi arka planda yükle (GIF'i engellemeyecek şekilde)
             const preload = new Image();
             preload.src = pngEl.src;
 
-            preload.onload = function() {
-                setTimeout(() => {
-                    const rect = gifEl.getBoundingClientRect();
-                    
-                    // Pozisyon CSS'te sabit; JS sadece boyut ve görünürlüğü kontrol eder
-                    pngEl.style.position = "absolute";
-                    pngEl.style.top = "50%";
-                    pngEl.style.left = "50%";
-                    pngEl.style.transform = "translate(-50%, -50%)";
-                    pngEl.style.width = `${rect.width}px`;
-                    pngEl.style.height = "auto";
-                    pngEl.style.opacity = "1";
-                }, duration - appearBeforeEnd);
+            // Zamanlayıcı: GIF bitiminden 50ms önce PNG'ye geç
+            setTimeout(() => {
+                const rect = gifEl.getBoundingClientRect();
+                
+                // Pozisyon CSS'te sabit; JS sadece boyut ve görünürlüğü kontrol eder
+                pngEl.style.position = "absolute";
+                pngEl.style.top = "50%";
+                pngEl.style.left = "50%";
+                pngEl.style.transform = "translate(-50%, -50%)";
+                pngEl.style.width = `${rect.width}px`;
+                pngEl.style.height = "auto";
+                pngEl.style.opacity = "1";
+            }, duration - appearBeforeEnd);
 
-                setTimeout(() => {
-                    gifEl.style.display = "none";
-                }, duration);
-            };
+            // GIF'i gizle
+            setTimeout(() => {
+                gifEl.style.display = "none";
+            }, duration);
         }
 
         showPNGafterGIF(gif1, png1, gif1Duration);
@@ -942,14 +959,16 @@
             const gif2Clone = document.createElement("img");
             gif2Clone.src = gif2.src;
             gif2Clone.classList.add("gif-triangle");
+            gif2Clone.style.display = "block";
             gif2Clone.style.opacity = "1";
             document.querySelector(".hero").appendChild(gif2Clone);
 
+            // PNG2'yi arka planda yükle - GIF animasyonunu engelleme
             const preload2 = new Image();
             preload2.src = png2.src;
 
-            preload2.onload = function() {
-                setTimeout(() => {
+            // Zaman görevlisi: PNG yükleme bitmesini beklemeden devam et
+            setTimeout(() => {
                     const rect = gif2Clone.getBoundingClientRect();
 
                     png2.style.position = "absolute";
@@ -978,7 +997,6 @@
                         }
                     }
                 }, gif2Duration - appearBeforeEnd);
-            };
         });
 
         // Effect scroll event with guard clause
