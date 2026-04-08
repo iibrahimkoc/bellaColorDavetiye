@@ -861,6 +861,13 @@
     </footer>
 
     <script>
+// Sayfa yenilendiğinde tarayıcının scroll pozisyonunu hatırlamasını engeller
+        // ve sayfayı her zaman en tepeye (0, 0 noktasına) odaklar.
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         let isAnimationDone = false;
         
         const gif1 = document.getElementById("FF");
