@@ -540,7 +540,7 @@
 
         /* Arma Image Section */
         .arma-image-section {
-            background: #a7c18f; /* RSVP ile bütünlük sağlandı */
+            background: #b5c4a8; /* RSVP ile bütünlük sağlandı */
             padding: 2rem 1rem 3rem;
             min-height: 100px;
             display: flex;
@@ -662,6 +662,28 @@
                 width: 92%;
                 max-width: none;
                 border-radius: 12px;
+            }
+
+            .countdown-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 4 öğeyi zorla yan yana dizer */
+                gap: 0.5rem; /* Kutular arası boşluğu daraltır */
+                width: 100%;
+                padding: 0 1rem; /* Ekranın sağından ve solundan 1'er birim içeride tutar */
+            }
+
+            .countdown-item {
+                padding: 1rem 0.2rem; /* Kutu içi yatay boşlukları daraltarak sığmasını sağlar */
+            }
+
+            .countdown-number {
+                font-size: 1.5rem; /* Rakamları 4'lü sığacak kadar küçültür */
+                margin-bottom: 0.2rem;
+            }
+
+            .countdown-label {
+                font-size: 0.65rem; /* Alt yazıları küçültür (Özellikle "Dakika" kelimesi için) */
+                letter-spacing: 0px; /* Harf arası boşluğu kaldırarak alandan tasarruf eder */
             }
         }
 
@@ -861,6 +883,13 @@
     </footer>
 
     <script>
+// Sayfa yenilendiğinde tarayıcının scroll pozisyonunu hatırlamasını engeller
+        // ve sayfayı her zaman en tepeye (0, 0 noktasına) odaklar.
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         let isAnimationDone = false;
         
         const gif1 = document.getElementById("FF");
@@ -904,7 +933,9 @@
 
         showPNGafterGIF(gif1, png1, gif1Duration);
 
-        png1.addEventListener("click", function() {
+        document.querySelector('.hero').addEventListener("click", function() {
+            if (png1.style.opacity === "0" || png1.style.display === "none") return;
+
             document.getElementById("click-hint").style.display = "none";
             png1.style.display = "none";
 
